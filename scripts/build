@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+browserify lib/index.js > bundle.js
