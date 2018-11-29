@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+git push origin master &&
+(git branch -D build || echo "no build branch to delete: passing") &&
+git checkout -b build &&
+npm run build &&
+git add bundle.js -f &&
+git commit -m 'update build' &&
+git push origin --force build &&
+git checkout master
